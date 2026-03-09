@@ -1,0 +1,1853 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Jeep Color Scheme */
+.jeep-portfolio {
+    --primary: #2D5016;
+    --olive: #556B2F;
+    --sand: #D4A574;
+    --dark: #1C1C1C;
+    --light: #F5F5DC;
+}
+
+/* Hyundai Color Scheme */
+.hyundai-portfolio {
+    --primary: #E63946;
+    --dark: #1D3557;
+    --light: #F1FAEE;
+    --accent: #A8DADC;
+    --text: #333;
+}
+
+/* Kia Color Scheme */
+.kia-portfolio {
+    --primary: #05141F;
+    --accent: #FF4B26;
+    --silver: #C0C0C0;
+    --light: #F8F9FA;
+    --text: #2C3E50;
+}
+
+/* Nissan Color Scheme */
+.nissan-portfolio {
+    --nissan-red: #C3002F;
+    --dark-gray: #2C2C2C;
+    --silver: #B8B8B8;
+    --light: #F5F5F5;
+    --white: #FFFFFF;
+}
+
+/* Shared Portfolio Styles */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== JEEP STYLES ===== */
+.jeep-portfolio body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--dark);
+    color: #333;
+}
+
+.jeep-portfolio .hero {
+    position: relative;
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(28,28,28,0.7), rgba(28,28,28,0.8)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231C1C1C"/><path d="M0,400 Q300,350 600,400 T1200,400 L1200,800 L0,800 Z" fill="%232D5016" opacity="0.1"/></svg>');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 120px 20px;
+}
+
+.jeep-portfolio .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(85,107,47,0.2) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 70%, rgba(212,165,116,0.15) 0%, transparent 50%);
+    animation: ambient-glow 15s ease-in-out infinite;
+}
+
+@keyframes ambient-glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+}
+
+.jeep-portfolio .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.jeep-portfolio .brand-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(45,80,22,0.3);
+    border: 2px solid var(--olive);
+    color: var(--sand);
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+    animation: slideIn 0.9s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.jeep-portfolio .jeep-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: 700;
+    color: var(--light);
+    line-height: 0.9;
+    margin-bottom: 15px;
+    letter-spacing: 8px;
+    text-shadow:
+        0 0 30px rgba(212,165,116,0.3),
+        3px 3px 0 rgba(0,0,0,0.3);
+    animation: slideUp 1.1s ease-out 0.2s both;
+}
+
+.jeep-portfolio .model-line {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    color: var(--sand);
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    animation: slideUp 1.1s ease-out 0.3s both;
+}
+
+.jeep-portfolio .year-badge {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: white;
+    background: var(--olive);
+    padding: 10px 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    animation: slideUp 1.1s ease-out 0.4s both;
+}
+
+.jeep-portfolio .tagline {
+    font-size: 1.4rem;
+    color: var(--sand);
+    margin-bottom: 50px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    animation: fadeIn 1.3s ease-out 0.5s both;
+}
+
+.jeep-portfolio .price-block {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), var(--olive));
+    padding: 35px 70px;
+    border-radius: 12px;
+    margin: 30px 0 50px;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(212,165,116,0.2);
+    animation: priceFloat 3s ease-in-out infinite;
+}
+
+@keyframes priceFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.jeep-portfolio .price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.jeep-portfolio .price-note {
+    font-size: 1rem;
+    color: var(--sand);
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+.jeep-portfolio .stats-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    animation: fadeIn 1.5s ease-out 0.7s both;
+}
+
+.jeep-portfolio .stat-item {
+    background: rgba(45,80,22,0.2);
+    border: 1px solid rgba(212,165,116,0.3);
+    padding: 30px 25px;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.jeep-portfolio .stat-item:hover {
+    background: rgba(45,80,22,0.35);
+    border-color: var(--sand);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(212,165,116,0.2);
+}
+
+.jeep-portfolio .stat-emoji {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.jeep-portfolio .stat-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--light);
+    margin-bottom: 8px;
+}
+
+.jeep-portfolio .stat-text {
+    color: var(--sand);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.jeep-portfolio .gallery-section {
+    background: var(--light);
+    padding: 110px 20px;
+    position: relative;
+}
+
+.jeep-portfolio .gallery-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, var(--dark), var(--light));
+}
+
+.jeep-portfolio .title-block {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.jeep-portfolio .section-label {
+    font-size: 0.95rem;
+    color: var(--olive);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.jeep-portfolio .section-heading {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.jeep-portfolio .photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.jeep-portfolio .photo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jeep-portfolio .photo-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.jeep-portfolio .photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jeep-portfolio .photo-card:hover img {
+    transform: scale(1.15);
+}
+
+.jeep-portfolio .photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(45,80,22,0.8) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jeep-portfolio .photo-card:hover .photo-overlay {
+    opacity: 1;
+}
+
+.jeep-portfolio .enlarge-icon {
+    font-size: 4rem;
+    color: white;
+    transform: scale(0);
+    transition: transform 0.3s ease 0.1s;
+}
+
+.jeep-portfolio .photo-card:hover .enlarge-icon {
+    transform: scale(1);
+}
+
+.jeep-portfolio .features-section {
+    background: linear-gradient(135deg, var(--primary) 0%, #1F3A0F 100%);
+    padding: 110px 20px;
+    color: white;
+}
+
+.jeep-portfolio .features-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    margin-top: 70px;
+}
+
+.jeep-portfolio .feature-box {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    padding: 45px 35px;
+    border-radius: 14px;
+    border-left: 5px solid var(--sand);
+    transition: all 0.3s ease;
+}
+
+.jeep-portfolio .feature-box:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateX(12px);
+    border-left-width: 8px;
+}
+
+.jeep-portfolio .feature-emoji {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 22px;
+}
+
+.jeep-portfolio .feature-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--sand);
+    letter-spacing: 1px;
+}
+
+.jeep-portfolio .feature-info {
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.jeep-portfolio .cta-section {
+    background:
+        linear-gradient(rgba(212,165,116,0.95), rgba(212,165,116,0.98)),
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 20px);
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.jeep-portfolio .cta-headline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    color: var(--dark);
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.jeep-portfolio .cta-subtext {
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+.jeep-portfolio .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--primary);
+    color: white;
+    padding: 25px 60px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 12px 35px rgba(45,80,22,0.4);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.jeep-portfolio .contact-btn:hover {
+    background: #1F3A0F;
+    transform: translateY(-5px);
+    box-shadow: 0 18px 50px rgba(45,80,22,0.5);
+}
+
+.jeep-portfolio .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.96);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.jeep-portfolio .lightbox.active {
+    display: flex;
+}
+
+.jeep-portfolio .lightbox img {
+    max-width: 92%;
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.jeep-portfolio .lb-close,
+.jeep-portfolio .lb-arrow {
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    background: rgba(45,80,22,0.7);
+    border: 2px solid var(--sand);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.jeep-portfolio .lb-close {
+    top: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    font-size: 2.2rem;
+    border-radius: 50%;
+}
+
+.jeep-portfolio .lb-close:hover {
+    background: var(--sand);
+    color: var(--dark);
+    transform: rotate(90deg);
+}
+
+.jeep-portfolio .lb-arrow {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    font-size: 3rem;
+    border-radius: 50%;
+}
+
+.jeep-portfolio .lb-arrow:hover {
+    background: var(--sand);
+    color: var(--dark);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.jeep-portfolio .lb-prev { left: 30px; }
+.jeep-portfolio .lb-next { right: 30px; }
+
+/* ===== HYUNDAI STYLES ===== */
+.hyundai-portfolio body {
+    font-family: 'DM Sans', sans-serif;
+    background: linear-gradient(135deg, #1D3557 0%, #2A4A6F 100%);
+    color: var(--text);
+}
+
+.hyundai-portfolio .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+    overflow: hidden;
+}
+
+.hyundai-portfolio .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(230, 57, 70, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(168, 218, 220, 0.15) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+}
+
+.hyundai-portfolio .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+}
+
+.hyundai-portfolio .badge {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hyundai-portfolio h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(3rem, 8vw, 7rem);
+    color: var(--light);
+    line-height: 0.9;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    animation: slideUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hyundai-portfolio .year {
+    color: var(--accent);
+}
+
+.hyundai-portfolio .hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 40px;
+    font-weight: 300;
+    animation: fadeIn 1s ease-out 0.4s both;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hyundai-portfolio .price-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), #C62E3A);
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 30px 60px;
+    border-radius: 15px;
+    margin: 30px 0;
+    box-shadow: 0 20px 60px rgba(230, 57, 70, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 20px 60px rgba(230, 57, 70, 0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 25px 80px rgba(230, 57, 70, 0.6); }
+}
+
+.hyundai-portfolio .negotiable {
+    font-size: 1rem;
+    display: block;
+    margin-top: 10px;
+    opacity: 0.9;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+}
+
+.hyundai-portfolio .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 60px 0;
+    animation: fadeIn 1.2s ease-out 0.6s both;
+}
+
+.hyundai-portfolio .stat-card {
+    background: rgba(241, 250, 238, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid rgba(168, 218, 220, 0.3);
+    transition: all 0.3s ease;
+}
+
+.hyundai-portfolio .stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(241, 250, 238, 0.15);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(168, 218, 220, 0.2);
+}
+
+.hyundai-portfolio .stat-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hyundai-portfolio .stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--light);
+    margin-bottom: 5px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+}
+
+.hyundai-portfolio .stat-label {
+    color: var(--accent);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hyundai-portfolio .gallery-section {
+    background: var(--light);
+    padding: 100px 20px;
+    position: relative;
+}
+
+.hyundai-portfolio .gallery-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, #2A4A6F 0%, var(--light) 100%);
+}
+
+.hyundai-portfolio .section-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    text-align: center;
+    color: var(--dark);
+    margin-bottom: 60px;
+    letter-spacing: 3px;
+}
+
+.hyundai-portfolio .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.hyundai-portfolio .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hyundai-portfolio .gallery-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.hyundai-portfolio .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hyundai-portfolio .gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.hyundai-portfolio .gallery-item::after {
+    content: '🔍';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 3rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.hyundai-portfolio .gallery-item:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.hyundai-portfolio .features-section {
+    background: var(--dark);
+    padding: 100px 20px;
+    color: white;
+}
+
+.hyundai-portfolio .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.hyundai-portfolio .feature-card {
+    background: rgba(241, 250, 238, 0.05);
+    padding: 40px 30px;
+    border-radius: 15px;
+    border-left: 4px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+.hyundai-portfolio .feature-card:hover {
+    background: rgba(241, 250, 238, 0.1);
+    transform: translateX(10px);
+    border-left-color: var(--accent);
+}
+
+.hyundai-portfolio .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hyundai-portfolio .feature-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.hyundai-portfolio .feature-description {
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+
+.hyundai-portfolio .contact-section {
+    background: linear-gradient(135deg, var(--primary), #C62E3A);
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hyundai-portfolio .contact-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hyundai-portfolio .contact-text {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.hyundai-portfolio .cta-button {
+    display: inline-block;
+    background: white;
+    color: var(--primary);
+    padding: 20px 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hyundai-portfolio .cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.hyundai-portfolio .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.hyundai-portfolio .lightbox.active {
+    display: flex;
+}
+
+.hyundai-portfolio .lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.hyundai-portfolio .lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.hyundai-portfolio .lightbox-close:hover {
+    background: rgba(255,255,255,0.2);
+    transform: rotate(90deg);
+}
+
+.hyundai-portfolio .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.hyundai-portfolio .lightbox-nav:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.hyundai-portfolio .lightbox-prev {
+    left: 30px;
+}
+
+.hyundai-portfolio .lightbox-next {
+    right: 30px;
+}
+
+/* ===== KIA STYLES ===== */
+.kia-portfolio body {
+    font-family: 'Inter', sans-serif;
+    background: var(--light);
+    color: var(--text);
+}
+
+.kia-portfolio .hero {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(165deg, var(--primary) 0%, #0A2540 50%, var(--primary) 100%);
+    display: flex;
+    align-items: center;
+    padding: 100px 20px;
+    overflow: hidden;
+}
+
+.kia-portfolio .hero::before {
+    content: '';
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255,75,38,0.15) 0%, transparent 70%);
+    top: -200px;
+    right: -200px;
+    animation: pulse-glow 8s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+}
+
+.kia-portfolio .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.kia-portfolio .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,75,38,0.2);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+    animation: slideDown 0.8s ease-out;
+}
+
+.kia-portfolio h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    color: white;
+    line-height: 0.95;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    animation: slideUp 1s ease-out 0.2s both;
+}
+
+.kia-portfolio .model-name {
+    color: var(--accent);
+    display: block;
+}
+
+.kia-portfolio .hero-tagline {
+    font-size: 1.5rem;
+    color: var(--silver);
+    margin-bottom: 50px;
+    font-weight: 300;
+    animation: fadeIn 1.2s ease-out 0.4s both;
+}
+
+.kia-portfolio .price-section {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 50px;
+    animation: fadeIn 1.4s ease-out 0.6s both;
+}
+
+.kia-portfolio .price {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    text-shadow: 0 0 40px rgba(255,75,38,0.5);
+}
+
+.kia-portfolio .price-label {
+    color: var(--silver);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.kia-portfolio .stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    animation: fadeIn 1.6s ease-out 0.8s both;
+}
+
+.kia-portfolio .stat-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 25px 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.kia-portfolio .stat-box:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.kia-portfolio .stat-icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.kia-portfolio .stat-value {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.kia-portfolio .stat-label {
+    color: var(--silver);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.kia-portfolio .gallery-section {
+    padding: 100px 20px;
+    background: white;
+}
+
+.kia-portfolio .section-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.kia-portfolio .section-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 3.5rem;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.kia-portfolio .section-subtitle {
+    color: #6C757D;
+    font-size: 1.1rem;
+}
+
+.kia-portfolio .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.kia-portfolio .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kia-portfolio .gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+}
+
+.kia-portfolio .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kia-portfolio .gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.kia-portfolio .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.kia-portfolio .gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.kia-portfolio .zoom-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 3.5rem;
+    color: white;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+.kia-portfolio .gallery-item:hover .zoom-icon {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.kia-portfolio .features-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+}
+
+.kia-portfolio .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.kia-portfolio .feature-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 16px;
+    border-left: 4px solid var(--accent);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+}
+
+.kia-portfolio .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-left-width: 8px;
+}
+
+.kia-portfolio .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.kia-portfolio .feature-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.kia-portfolio .feature-text {
+    color: #6C757D;
+    line-height: 1.7;
+}
+
+.kia-portfolio .cta-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, var(--primary) 0%, #0A2540 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.kia-portfolio .cta-section::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,75,38,0.2) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.kia-portfolio .cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.kia-portfolio .cta-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 3.5rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.kia-portfolio .cta-text {
+    font-size: 1.3rem;
+    color: var(--silver);
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kia-portfolio .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--accent);
+    color: white;
+    padding: 22px 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255,75,38,0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.kia-portfolio .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255,75,38,0.4);
+    background: #FF3300;
+}
+
+.kia-portfolio .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.kia-portfolio .lightbox.active {
+    display: flex;
+}
+
+.kia-portfolio .lightbox img {
+    max-width: 92%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.kia-portfolio .lightbox-close,
+.kia-portfolio .lightbox-nav {
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.kia-portfolio .lightbox-close {
+    top: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    border-radius: 50%;
+}
+
+.kia-portfolio .lightbox-close:hover {
+    background: rgba(255,75,38,0.9);
+    border-color: var(--accent);
+    transform: rotate(90deg);
+}
+
+.kia-portfolio .lightbox-nav {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    font-size: 2.5rem;
+    border-radius: 50%;
+}
+
+.kia-portfolio .lightbox-nav:hover {
+    background: rgba(255,75,38,0.9);
+    border-color: var(--accent);
+}
+
+.kia-portfolio .lightbox-prev { left: 25px; }
+.kia-portfolio .lightbox-next { right: 25px; }
+
+/* ===== NISSAN STYLES ===== */
+.nissan-portfolio body {
+    font-family: 'Work Sans', sans-serif;
+    background: var(--white);
+    color: var(--dark-gray);
+    overflow-x: hidden;
+}
+
+.nissan-portfolio .back-button {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 1000;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nissan-portfolio .back-button:hover {
+    background: rgba(0,0,0,0.9);
+    transform: translateX(-5px);
+}
+
+.nissan-portfolio .hero {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--dark-gray) 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    padding: 120px 20px;
+    overflow: hidden;
+}
+
+.nissan-portfolio .hero::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 25% 40%, rgba(195, 0, 47, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 75% 60%, rgba(184, 184, 184, 0.1) 0%, transparent 50%);
+    animation: subtle-move 25s ease-in-out infinite;
+}
+
+@keyframes subtle-move {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, -20px); }
+}
+
+.nissan-portfolio .hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.nissan-portfolio .hero-content {
+    color: white;
+}
+
+.nissan-portfolio .brand-tag {
+    display: inline-block;
+    background: rgba(195, 0, 47, 0.2);
+    border: 2px solid var(--nissan-red);
+    color: var(--nissan-red);
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.nissan-portfolio .brand-name {
+    font-family: 'Exo 2', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 15px;
+    letter-spacing: -2px;
+    animation: fadeSlideUp 1s ease-out 0.2s both;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nissan-portfolio .model-name {
+    font-family: 'Exo 2', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 600;
+    color: var(--silver);
+    margin-bottom: 10px;
+    animation: fadeSlideUp 1s ease-out 0.3s both;
+}
+
+.nissan-portfolio .year-line {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 2rem;
+    color: var(--nissan-red);
+    font-weight: 800;
+    margin-bottom: 30px;
+    animation: fadeSlideUp 1s ease-out 0.4s both;
+}
+
+.nissan-portfolio .tagline {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 40px;
+    line-height: 1.6;
+    animation: fadeSlideUp 1s ease-out 0.5s both;
+}
+
+.nissan-portfolio .price-display {
+    background: linear-gradient(135deg, var(--nissan-red), #a00025);
+    display: inline-block;
+    padding: 25px 50px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 15px 40px rgba(195, 0, 47, 0.3);
+    animation: fadeSlideUp 1s ease-out 0.6s both;
+}
+
+.nissan-portfolio .price-amount {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.nissan-portfolio .price-label {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.nissan-portfolio .specs-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    animation: fadeSlideUp 1s ease-out 0.7s both;
+}
+
+.nissan-portfolio .spec-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.05);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 3px solid var(--nissan-red);
+}
+
+.nissan-portfolio .spec-emoji {
+    font-size: 1.5rem;
+}
+
+.nissan-portfolio .spec-text {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.nissan-portfolio .hero-image-side {
+    position: relative;
+}
+
+.nissan-portfolio .main-showcase {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    animation: fadeSlideUp 1s ease-out 0.8s both;
+}
+
+.nissan-portfolio .stats-bar {
+    background: var(--white);
+    padding: 50px 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.nissan-portfolio .stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nissan-portfolio .stat-box {
+    text-align: center;
+}
+
+.nissan-portfolio .stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.nissan-portfolio .stat-value {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--nissan-red);
+    margin-bottom: 8px;
+}
+
+.nissan-portfolio .stat-label {
+    color: #666;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.nissan-portfolio .gallery-section {
+    padding: 100px 20px;
+    background: var(--light);
+}
+
+.nissan-portfolio .section-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.nissan-portfolio .section-subtitle {
+    font-size: 0.9rem;
+    color: var(--nissan-red);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.nissan-portfolio .section-title {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--dark-gray);
+}
+
+.nissan-portfolio .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.nissan-portfolio .gallery-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nissan-portfolio .gallery-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+}
+
+.nissan-portfolio .gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.nissan-portfolio .gallery-card:hover img {
+    transform: scale(1.1);
+}
+
+.nissan-portfolio .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(195,0,47,0.7) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nissan-portfolio .gallery-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.nissan-portfolio .zoom-indicator {
+    font-size: 3.5rem;
+    color: white;
+    transform: scale(0);
+    transition: transform 0.3s ease 0.1s;
+}
+
+.nissan-portfolio .gallery-card:hover .zoom-indicator {
+    transform: scale(1);
+}
+
+.nissan-portfolio .features-section {
+    padding: 100px 20px;
+    background: var(--dark-gray);
+    color: white;
+}
+
+.nissan-portfolio .features-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.nissan-portfolio .feature-item {
+    background: rgba(255,255,255,0.05);
+    padding: 40px 30px;
+    border-radius: 12px;
+    border-top: 4px solid var(--nissan-red);
+    transition: all 0.3s ease;
+}
+
+.nissan-portfolio .feature-item:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-8px);
+}
+
+.nissan-portfolio .feature-emoji {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.nissan-portfolio .feature-heading {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--nissan-red);
+}
+
+.nissan-portfolio .feature-desc {
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+}
+
+.nissan-portfolio .cta-section {
+    padding: 90px 20px;
+    background: linear-gradient(135deg, var(--nissan-red), #a00025);
+    text-align: center;
+    color: white;
+}
+
+.nissan-portfolio .cta-heading {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.nissan-portfolio .cta-subheading {
+    font-size: 1.3rem;
+    margin-bottom: 45px;
+    opacity: 0.95;
+}
+
+.nissan-portfolio .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    color: var(--nissan-red);
+    padding: 22px 55px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+.nissan-portfolio .cta-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.3);
+}
+
+.nissan-portfolio .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.96);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.nissan-portfolio .lightbox.active {
+    display: flex;
+}
+
+.nissan-portfolio .lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.nissan-portfolio .lb-controls {
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    background: rgba(195,0,47,0.8);
+    border: 2px solid white;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.nissan-portfolio .lb-controls:hover {
+    background: white;
+    color: var(--nissan-red);
+}
+
+.nissan-portfolio .lb-close {
+    top: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    font-size: 2rem;
+    border-radius: 50%;
+}
+
+.nissan-portfolio .lb-arrow {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
+    border-radius: 50%;
+}
+
+.nissan-portfolio .lb-arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nissan-portfolio .lb-prev { left: 30px; }
+.nissan-portfolio .lb-next { right: 30px; }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .jeep-portfolio .jeep-logo { font-size: 3.5rem; }
+    .jeep-portfolio .model-line { font-size: 2rem; }
+    .jeep-portfolio .price { font-size: 3rem; }
+    .jeep-portfolio .section-heading { font-size: 2.8rem; }
+    .jeep-portfolio .stats-wrapper { grid-template-columns: repeat(2, 1fr); }
+    .jeep-portfolio .photos-grid { grid-template-columns: 1fr; }
+
+    .hyundai-portfolio h1 { font-size: 3rem; }
+    .hyundai-portfolio .price-tag { font-size: 2rem; padding: 20px 40px; }
+    .hyundai-portfolio .section-title { font-size: 2.5rem; }
+    .hyundai-portfolio .gallery-grid { grid-template-columns: 1fr; }
+    .hyundai-portfolio .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .kia-portfolio h1 { font-size: 3rem; }
+    .kia-portfolio .price { font-size: 3.5rem; }
+    .kia-portfolio .section-title { font-size: 2.5rem; }
+    .kia-portfolio .stats-container { grid-template-columns: repeat(2, 1fr); }
+    .kia-portfolio .gallery-grid { grid-template-columns: 1fr; }
+
+    .nissan-portfolio .brand-name { font-size: 3.5rem; }
+    .nissan-portfolio .model-name { font-size: 2.5rem; }
+    .nissan-portfolio .section-title { font-size: 2.5rem; }
+    .nissan-portfolio .stats-container { grid-template-columns: repeat(2, 1fr); }
+    .nissan-portfolio .gallery-grid { grid-template-columns: 1fr; }
+    .nissan-portfolio .hero-grid { grid-template-columns: 1fr; }
+}
